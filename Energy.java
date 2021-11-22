@@ -17,7 +17,6 @@ final class Energy {
     * Variable for speed of light squared.
     */
     public static final double LIGHT = 8.988004;
-
     /**
     * Prevent instantiation.
     * Throw an exception IllegalStateException.
@@ -38,20 +37,18 @@ final class Energy {
     */
 
     public static void main(final String[] args) {
+        Scanner potential = new Scanner(System.in);
+
+        System.out.print("Enter mass of object: ");
         try {
-            final Scanner potential = new Scanner(System.in);
-
-            System.out.print("Enter mass of object: ");
-
-            final float mass = potential.nextFloat();
+            final double mass = potential.nextFloat();
 
             System.out.println("Potential energy of an object with a mass of " + mass + "kg is "
                 + mass * LIGHT + "E16 Joules.");
         }
-        catch (Exception e) {
-            System.out.println("This is not a number");
+        catch (exception NumberFormatException) {
+            System.err.println("Sorry, that is not a number");
         }
-
         System.out.println("\nDone.");
     }
 }
