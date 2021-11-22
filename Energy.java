@@ -37,7 +37,7 @@ final class Energy {
     */
 
     public static void main(final String[] args) {
-        Scanner potential = new Scanner(System.in);
+        final Scanner potential = new Scanner(System.in);
 
         System.out.print("Enter mass of object: ");
         try {
@@ -46,8 +46,8 @@ final class Energy {
             System.out.println("Potential energy of an object with a mass of " + mass + "kg is "
                 + mass * LIGHT + "E16 Joules.");
         }
-        catch (exception NumberFormatException) {
-            System.err.println("Sorry, that is not a number");
+        catch (java.util.InputMismatchException errorCode) {
+            System.err.println("Sorry, that was not a number.");
         }
         System.out.println("\nDone.");
     }
